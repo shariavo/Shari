@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shariavo</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS from CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- My Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- My Favicon -->
+	<link rel="icon" href="media/LOGO_2.png" type="image/png" />
+
+</head>
+<body>
+	<header>
+		<div align="center" class="logo">
+			<a href="index.html"><img src="media/miLogo.png"></a>
+		</div>
+	</header>
+
+
+
+	<div class="full-screen-video-container">
+		<video autoplay loop muted> 
+			<source src="media/video_web.mp4" type="video/mp4">
+  			Your browser does not support HTML5 video.
+		</video>
+		<div class="full-screen-video-content">
+			<a class="btn btn-primary" href="#" role="button">Tienda</a>
+			<br>
+			<a class="btn btn-primary" href="#artist" role="button">Artista</a>
+		</div>
+	</div>
+
+	<div class="banner" id="artist">Que onda que pez, banner</div>
+	<!-- SnapWidget -->
+	<div class="gallery">
+		<script src="https://snapwidget.com/js/snapwidget.js"></script>
+		<iframe src="https://snapwidget.com/embed/881150" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
+	</div>
+	
+
+
+
+	<div class="form_container" >
+
+		<div id="app" >
+	        <div class="container">
+	        	<h1>dudas ó sugerencias</h1>
+	        	<form  onsubmit="return validation()">
+
+	                <div class="row">
+	                    <label>Nombre:</label>
+	                </div>
+	                
+	                <div class="row">
+	                    <input class="form-control" type="text" v-model="from_name" id="nameV" required></input>    
+	                </div>
+
+	                <div class="row">
+	                    <label>Asunto:</label>
+	                </div>
+
+	                <div class="row">
+	                    <input class="form-control" type="text" v-model="subject" id="subjectV" required></input>
+	                </div>
+
+	                <div class="row">
+	                    <label>Correo:</label>
+	                </div>
+
+	                <div class="row">
+	                    <input class="form-control" type="email" v-model="from_email" id="emailV" required></input>
+	                </div>
+	                
+	                <div class="row">
+	                    <label>Mensaje:</label>
+	                </div>
+
+	                <div class="row">
+	            		<textarea type="textarea" class="form-control" v-model="message" id="messageV" required></textarea>
+	                </div>
+	                <br>
+	                <div class="row justify-content-md-center">
+	                    <input type="submit" value="Enviar" class="btn btn-success">
+	                    <button id="action-button" @click="enviar" style="display:none">
+                            Enviar
+                        </button>
+	                </div>
+	            </form>
+	                      
+	        </div>
+	    </div>
+	</div>
+
+	<footer>
+		<h1><span>CONTACTO</span></h1>
+		<p>shariavo@gmail.com</p>
+		<div align="center" class="redes">
+			<a href="https://www.facebook.com/shari.avo"><img src="media/FB.png" ></a>
+			<a href="https://www.instagram.com/shari.avo"><img src="media/IG.png" ></a>
+			<a href="https://www.pinterest.ie/shari_avo"><img src="media/PINTEREST.png"></a>
+			<a href="#app"><img src="media/MAIL.png" >
+		</div> 
+	</footer>
+
+	
+	
+	<!-- JavaScript Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- JavaScript Email -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
+    <!-- My JavaScript -->
+    <script type="text/javascript" src="javascript.js"></script>
+    <!--<script>
+    	function validation() {
+
+			/*var nameVal, subjectVal, emailVal, messageVal, val;
+
+
+			nameVal = document.getElementById("nameV").value;
+			subjectVal = document.getElementById("subjectV").value;
+			emailVal = document.getElementById("emailV").value;
+			messageVal = document.getElementById("messageV").value;
+
+			if( nameVal == null || nameVal.length == 0 || /^\s+$/.test(nameVal) ) {
+				alert(nameVal+subjectVal+emailVal+messageVal);
+			    return false;
+			}
+			else if( subjectVal == null || subjectVal.length == 0 || /^\s+$/.test(subjectVal) ) {
+				alert(nameVal+subjectVal+emailVal+messageVal);
+				return false;
+			}
+			else if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(emailVal)) ) {
+				alert(nameVal+subjectVal+emailVal+messageVal);
+ 				return false;
+			}
+			else if( messageVal == null || messageVal.length == 0 || /^\s+$/.test(messageVal) ) {
+				alert(nameVal+subjectVal+emailVal+messageVal);
+				return false;
+			}*/
+
+		  	document.getElementById("action-button").click();
+	      
+		  	return true;
+		}
+		(function(){
+            emailjs.init("user_zpt7xYd3Xq0D02jeRYuS6");
+        })();
+        const vue = new Vue({el: '#app',data(){
+	            return {
+	               	from_name: '',
+	                from_email: '',
+	                message: '',
+	                subject: '',
+	            }
+	        },methods: {
+	                    
+	          	enviar(){
+	              	let data = {
+	                	from_name: this.from_name,
+	                    from_email: this.from_email,
+	                    message: this.message,
+	                    subject: this.subject,
+	                };
+	                        
+	                emailjs.send("Gmail","template_mcnbvue", data).then(function(response) {
+	                   	if(response.text === 'OK'){
+	                        location.reload();
+	                        alert('El correo se ha enviado de forma exitosa');
+	                    }
+
+	                 	console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+
+	                }, function(err) {
+	                        alert('Ocurrió un problema al enviar el correo');
+	                        console.log("FAILED. error=", err);
+	                    });
+	            }
+	        }
+        });
+    </script>-->
+</body>
+</html>
