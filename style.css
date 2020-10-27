@@ -84,15 +84,15 @@ header{
 
 }
 .banner{
-	border: 3px solid black;
-	height: 50%;
-	width: 100%;
-	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	background-color: black;
+}
+.banner img{
+	position: relative;
+	height: 50vh;
+	width: 100vw;
+	overflow: hidden;
 }
 .gallery{
 	padding: 5rem;
@@ -179,6 +179,12 @@ footer h1,p{
 	.form_container{
 		padding: 9rem 2rem;
 	}
+	.banner img{
+		position: relative;
+		height: 20vh;
+		width: 100vw;
+		overflow: hidden;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -203,5 +209,8 @@ footer h1,p{
 
 	.form_container{
 		padding: 9rem 2rem;
+	}
+	.form_container h1{
+		font-size: 30px;
 	}
 }
